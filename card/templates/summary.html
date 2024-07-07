@@ -1,0 +1,145 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flash Card</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="icon" href="{% static 'card/favicon.svg' %}" type="image/svg+xml">
+    <style>
+        body {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('{% static "card/bg.jpg" %}');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .container {
+            background-color: rgba(108, 117, 125, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+        }
+        .navbar .container-fluid {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+        }
+        .navbar-brand svg {
+            margin-right: 10px;
+        }
+        .search-form {
+            display: flex;
+        }
+        .search-form input {
+            border-radius: 0;
+        }
+        .search-form button {
+            border-radius: 0;
+        }
+        .container-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh; /* 높이 설정 */
+            overflow-y: auto; /* 수직 스크롤 설정 */
+            scrollbar-width: none; /* Firefox에서 스크롤바 감추기 */
+            -ms-overflow-style: none; /* IE 및 Edge에서 스크롤바 감추기 */
+        }
+        .container-wrapper::-webkit-scrollbar {
+            dis
+            play: none; /* Chrome 및 Safari에서 스크롤바 감추기 */
+        }
+        .thicker-text {
+            font-weight: 900; /* 두꺼운 텍스트 */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand text-light" href="{% url 'select_deck' %}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-journal-text" viewBox="0 0 16 16">
+                    <path d="M5 10.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5m0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5"/>
+                    <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2"/>
+                    <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1z"/>
+                </svg>
+                Flashcard
+            </a>
+            <div class="container2">
+                <form id="search-form" class="row g-3" method="get" action="https://youglish.com/pronounce/">
+                    <div class="col-auto">
+                        <input type="text" id="word" name="q" class="form-control" placeholder="단어를 입력하세요">
+                    </div>
+                    <div class="col-auto">
+                    <select id="language" name="l" class="form-select">
+                    <option value="english">영어</option>
+                    <option value="arabic">아라비아어</option>
+                    <option value="chinese">중국어</option>
+                    <option value="dutch">네덜란드어</option>
+                    <option value="french">프랑스어</option>
+                    <option value="german">독일어</option>
+                    <option value="greek">그리스어</option>
+                    <option value="hebrew">히브리어</option>
+                    <option value="italian">이탈리아어</option>
+                    <option value="japanese">일본어</option>
+                    <option value="korean">한국어</option>
+                    <option value="polish">폴란드어</option>
+                    <option value="portuguese">포르투갈어</option>
+                    <option value="russian">러시아어</option>
+                    <option value="spanish">스페인어</option>
+                    <option value="swedish">스웨덴어</option>
+                    <option value="thai">태국어</option>
+                    <option value="turkish">터키어</option>
+                    <option value="ukrainian">우크라이나어</option>
+                    <option value="vietnamese">베트남어</option>
+                </select>
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-dark">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                      </svg>
+                      검색
+                </button>
+            </div>
+        </form>
+        </div>
+    </nav>
+
+    <div class="container-wrapper">
+        <div class="container mt-5 pt-5 text-center">
+            <h1 class="display-1 text-primary-emphasis thicker-text">학습 완료!</h1>
+            <h3 class="text-dark thicker-text">다음 학습을 진행해볼까요?</h3>
+            <a href="{% url 'select_deck' %}" class="btn btn-dark mb-4">
+                Main Page
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-house-door" viewBox="0 0 16 16">
+                    <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4z"/>
+                  </svg>
+            </a>
+            <img src="{% static 'card/repetition_counts.png' %}" alt="Repetition Counts Graph" class="img-fluid mb-3">
+        </div>
+    </div>    
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <script>
+        document.getElementById('search-form').onsubmit = function() {
+            var word = document.getElementById('word').value;
+            var language = document.getElementById('language').value;
+            window.location.href = "https://youglish.com/pronounce/" + word + "/" + language + "?";
+            return false; // 페이지 리로드 방지
+        };
+    </script>
+</body>
+</html>

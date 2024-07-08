@@ -5,14 +5,12 @@
 <div align=center><h1>📚 STACKS</h1></div>
 
 <div align=center> 
-  <img src="https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=java&logoColor=white"> 
-  <img src="https://img.shields.io/badge/java-007396?style=for-the-badge&logo=java&logoColor=white"> 
-  <img src="https://img.shields.io/badge/java-007396?style=for-the-badge&logo=java&logoColor=white"> 
-  <br>
-
-  <img src="https://img.shields.io/badge/java-007396?style=for-the-badge&logo=java&logoColor=white"> 
-  <img src="https://img.shields.io/badge/java-007396?style=for-the-badge&logo=java&logoColor=white"> 
-  <img src="https://img.shields.io/badge/java-007396?style=for-the-badge&logo=java&logoColor=white"> 
+  <img src="https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=python&logoColor=white"> 
+  <img src="https://img.shields.io/badge/html?style=for-the-badge&logo=html&logoColor=white"> 
+  <img src="https://img.shields.io/badge/css?style=for-the-badge&logo=css&logoColor=white"> 
+  <img src="https://img.shields.io/badge/Django?style=for-the-badge&logo=Django&logoColor=white"> 
+  <img src="https://img.shields.io/badge/Bootstrap?style=for-the-badge&logo=Bootstrap&logoColor=white"> 
+  <img src="https://img.shields.io/badge/pandas?style=for-the-badge&logo=pandas&logoColor=white"> 
   <br>
 </div>
 - 단어 데이터:

@@ -2,7 +2,19 @@
 
 #### 이 프로젝트는 플래시카드를 사용하여 언어 학습을 돕는 웹 애플리케이션입니다. 망각곡선의 개념과 배열의 개념을 적용하여 사용자는 단어의 암기 속도를 향상시킬 수 있습니다.
 ![image](https://github.com/g-yunjh/Jagu_Termp/assets/122170238/0fd93b81-f07c-4ae4-a327-6c0db6169609)
-#3776AB#E34F26#1572B6#150458#092E20#7952B3
+<div align=center><h1>📚 STACKS</h1></div>
+
+<div align=center> 
+  <img src="https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=java&logoColor=white"> 
+  <img src="https://img.shields.io/badge/java-007396?style=for-the-badge&logo=java&logoColor=white"> 
+  <img src="https://img.shields.io/badge/java-007396?style=for-the-badge&logo=java&logoColor=white"> 
+  <br>
+
+  <img src="https://img.shields.io/badge/java-007396?style=for-the-badge&logo=java&logoColor=white"> 
+  <img src="https://img.shields.io/badge/java-007396?style=for-the-badge&logo=java&logoColor=white"> 
+  <img src="https://img.shields.io/badge/java-007396?style=for-the-badge&logo=java&logoColor=white"> 
+  <br>
+</div>
 - 단어 데이터:
   - 2022 교육부 영어과 교육과정 기본 어휘목록 3,000
   - 한문 교육용 기초한자 1800자

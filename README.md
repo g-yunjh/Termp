@@ -1,3 +1,5 @@
+![image](https://github.com/g-yunjh/Jagu_Termp/assets/122170238/0fd93b81-f07c-4ae4-a327-6c0db6169609)
+
 이 프로젝트는 **플래시카드 학습법**과 **망각곡선(forgetting curve) 이론**을 적용하여 영어 어휘와 한문 기초 한자를 효율적으로 학습할 수 있도록 돕는 웹 애플리케이션입니다.
 
 ## 🔗 논문 발표
